@@ -1,4 +1,7 @@
 @media  (max-width: 1150px) {
+    .wrapper{
+        margin-bottom: 70px;
+    }
     .content{
         width: 100%;
     }
@@ -34,6 +37,14 @@
     }
 }
 @media(min-width:769px) and (max-width: 1024px) {
+    .wrapper{
+        margin: 70px 0;
+    }
+    .header{
+        display: flex;
+        position: fixed;
+        top:0px
+    }
     .header-content{
         display: flex;
     }
@@ -155,25 +166,151 @@
     .product-content-active{
         width: 100%;
     }
+    .menu{
+        position: fixed;
+        display: none;
+        height: 180px;
+    }
+    .section-contain{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        position: fixed;
+        top:70px;
+        left: 0;
+
+    }
+    .section-link{
+        display:flex;
+        width: 99vw;
+        padding: 10px 15px;
+        margin: auto;
+    }
+    .section-link:hover{
+        background-color:#618cbf;
+    }
+    .backet-contain{
+        display: none;
+    }
+    .filter-hidden-bg{
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1;
+        top: 0;
+    }
+    .filter-hidden{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+        height: 70%;
+        margin: auto;
+        background-color: #fff;
+        margin-top:30px;
+        font-family: OpenSans;
+    }
+    .filter-hidden-contain{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .filter-hidden-logo__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-logo{
+        display: none;
+        position: absolute;
+        top:17%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-logo__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand{
+        display: none;
+        position: absolute;
+        top:31%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-brand__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden__border-price{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 50px;
+        border:1px solid #c2c2c2;
+        align-self: center;
+    }
+    .label-price{
+        display: flex;
+        padding-left: 10px;
+        margin: auto;
+    }
+    .filter-hidden__price{
+        display: flex;
+        border:none;
+        text-align: right;
+        width: 100%;
+        margin-right: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+    .filter-hidden__btn{
+        display: inline;
+        align-self: center;
+        width: 90%;
+        height: 50px;
+        border:none;
+        outline: none;
+        background-color: #e82425;
+        color: #fff;
+        font-size: 26px;
+    }
+    
+    .filter-hidden-logo__icon{
+        display: inline-flex;
+        align-self: baseline;
+        width: 22px;
+        height: 16px;
+        background-image: url(../img/fa-icon.png);
+        background-size: 450%;
+        background-position: 0% 23%;
+        margin-right: 10px
+    }
 }
-@media (max-width: 768px) and (min-width: 500px){
+@media (max-width: 768px){
+    .wrapper{
+        margin: 70px 0;
+    }
+    .header{
+        display: flex;
+        position: fixed;
+        top:0px
+    }
     .header-content{
         display: flex;
     }
     .content{
         width: 100%;
-    }
-    .nav__btn{
-        display: flex;
-        width:26px;
-        height: 22px;
-        align-self: center;
-        border:none;
-        outline: none;
-        background:none;
-        background-image:url(../img/fa-icon.png);
-        background-position: 65% 100%;
-        margin-right: 20px;
     }
     .header__logo{
         margin-right: 25px;
@@ -182,11 +319,8 @@
         border:none;
     }
     .search{
-        text-align: left;
-        display: inline-block;
         width: 70%;
         margin-right: 25px;
-        flex-grow: 1
     }
     .shipping-payment{
         display: none;
@@ -197,9 +331,6 @@
         height: 25px;
         background-image: url(../img/fa-icon.png);
         background-position:0px 49px;
-    }
-    .menu{
-        display: none;
     }
     .phone-number{
         display: none;
@@ -236,11 +367,6 @@
     .menu-hidden__filter-btn:active{
         margin-bottom: -.5%;
     }
-    .product-contain{
-        width: 100%;
-        margin: 0 auto;
-        justify-content: center;
-    }
     .product{
         width: 49%;
     }
@@ -250,9 +376,6 @@
     .product-content{
         width: 90%;
         flex-grow: 1;
-    }
-    .product__header{
-        font-size: 16px;
     }
     .product__text{
         display: inline-flex;
@@ -265,7 +388,7 @@
     }
     .product-active{
         width: 98%;
-        border:1px solid #dedede:
+        border:1px solid #dedede;
     }
     .product__img-active{
         padding-left: 10px;
@@ -278,8 +401,147 @@
     .product-content-active{
         width: 100%;
     }
+    .menu{
+        position: fixed;
+        display: none;
+        height: 180px;
+    }
+    .section-contain{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        position: fixed;
+        top:70px;
+        left: 0;
+
+    }
+    .section-link{
+        display:flex;
+        width: 99vw;
+        padding: 10px 15px;
+        margin: auto;
+    }
+    .section-link:hover{
+        background-color:#618cbf;
+    }
+    .backet-contain{
+        display: none;
+    }
+    .filter-hidden-bg{
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1;
+        top: 0;
+    }
+    .filter-hidden{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+        height: 70%;
+        margin: auto;
+        background-color: #fff;
+        margin-top:30px;
+        font-family: OpenSans;
+    }
+    .filter-hidden-contain{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .filter-hidden-logo__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-logo{
+        display: none;
+        position: absolute;
+        top:17%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-logo__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand{
+        display: none;
+        position: absolute;
+        top:31%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-brand__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden__border-price{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 50px;
+        border:1px solid #c2c2c2;
+        align-self: center;
+    }
+    .label-price{
+        display: flex;
+        padding-left: 10px;
+        margin: auto;
+    }
+    .filter-hidden__price{
+        display: flex;
+        border:none;
+        text-align: right;
+        width: 100%;
+        margin-right: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+    .filter-hidden__btn{
+        display: inline;
+        align-self: center;
+        width: 90%;
+        height: 50px;
+        border:none;
+        outline: none;
+        background-color: #e82425;
+        color: #fff;
+        font-size: 26px;
+    }
+    
+    .filter-hidden-logo__icon{
+        display: inline-flex;
+        align-self: baseline;
+        width: 22px;
+        height: 16px;
+        background-image: url(../img/fa-icon.png);
+        background-size: 450%;
+        background-position: 0% 23%;
+        margin-right: 10px
+    }
 }
 @media (max-width: 500px) and (min-width: 320px){
+    .wrapper{
+        margin: 70px 0;
+        overflow-x: hidden;
+    }
+    .header{
+        display: flex;
+        position: fixed;
+        top:0px
+    }
     .header-content{
         display: flex;
         width: 98%;
@@ -298,7 +560,9 @@
         background-image:url(../img/fa-icon.png);
         background-position: 65% 100%;
         margin-right: 20px;
+        cursor: pointer;
     }
+
     .header__logo{
         margin-right: 25px;
     }
@@ -325,6 +589,7 @@
         background-size: 350%;
         background-position: 0% 0%;
         margin-right: 5px;
+        cursor: pointer;
     }
     .shipping-payment{
         display: none;
@@ -335,8 +600,12 @@
         height: 25px;
         background-image: url(../img/fa-icon.png);
         background-position:0px 49px;
+        cursor: pointer;
     }
     .menu{
+        display: none;
+    }
+    .backet-contain{
         display: none;
     }
     .phone-number{
@@ -423,4 +692,144 @@
     .product-price__old{
         margin-top: 30px
     }
+    .menu{
+        position: fixed;
+        display: none;
+        height: 180px;
+    }
+    .section-contain{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        position: fixed;
+        top:70px;
+    }
+    .section-link{
+        display:flex;
+        width: 99vw;
+        padding: 10px 15px;
+        margin: auto;
+    }
+    .section-link:hover{
+        background-color:#618cbf;
+    }
+    .search-hidden-contain{
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 50px;
+        background-color: #1f497a;
+    }
+    .search-hidden{
+        border:none;
+        background-color: #1f497a;
+        width: 100%;
+        margin:0 15px;
+        color: #fff;
+    }
+    .filter-hidden-bg{
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1;
+        top: 0;
+    }
+    .filter-hidden{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 90%;
+        height: 70%;
+        margin: auto;
+        background-color: #fff;
+        margin-top:30px;
+        font-family: OpenSans;
+    }
+    .filter-hidden-contain{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .filter-hidden-logo__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand__span{
+        padding-left: 10px;
+        cursor: pointer;
+    }
+    .filter-hidden-logo{
+        display: none;
+        position: absolute;
+        top:17%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-logo__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden-brand{
+        display: none;
+        position: absolute;
+        top:31%;
+        width: 81%;
+        background: #fff;
+    }
+    .filter-hidden-brand__item{
+        text-align: left;
+        margin-left: 10px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .filter-hidden__border-price{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 50px;
+        border:1px solid #c2c2c2;
+        align-self: center;
+    }
+    .label-price{
+        display: flex;
+        padding-left: 10px;
+        margin: auto;
+    }
+    .filter-hidden__price{
+        display: flex;
+        border:none;
+        text-align: right;
+        width: 100%;
+        margin-right: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+    .filter-hidden__btn{
+        display: inline;
+        align-self: center;
+        width: 90%;
+        height: 50px;
+        border:none;
+        outline: none;
+        background-color: #e82425;
+        color: #fff;
+        font-size: 26px;
+    }
+    
+    .filter-hidden-logo__icon{
+        display: inline-flex;
+        align-self: baseline;
+        width: 22px;
+        height: 16px;
+        background-image: url(../img/fa-icon.png);
+        background-size: 450%;
+        background-position: 0% 23%;
+        margin-right: 10px
+    }
+    
 }
