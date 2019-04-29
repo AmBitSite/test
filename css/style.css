@@ -9,6 +9,7 @@
 .d-flex{
     display: flex;
 }
+
 .filter-hidden-bg{
     display: none;
 }
@@ -37,6 +38,7 @@
 }
 .header-contain{
     display: flex;
+    align-items: center;
 }
 .search-hidden-contain{
     display: none;
@@ -72,6 +74,7 @@
     border:none;
     color: #fff;
     font-size: 14px;
+    width: 265px;
 }
 .shipping-contain{
     height: 18px;
@@ -103,7 +106,6 @@
     color:#fff;
 }
 .section__mobile{
-    
     margin-right: 80px;
 }
 .section__tablet{
@@ -152,20 +154,29 @@
 }
 .filter-contain{
     display: flex;
-    align-items: center;
     border:1px solid #c2c2c2;
-    width: 264px;
     height: 50px;
-	display: block;
 	position: relative;
-	text-decoration: none;
     margin-right: 12px;
+}
+.filter-wrap{
+    display: flex;
+    align-items: center;
+    justify-content:space-between; 
+    width: 264px;
 }
 .filter__span{
     display: flex;
-    text-align: left;
-    padding-top:16px;
     padding-left: 15px;
+}
+.filter__icon{
+    display: flex;
+    width: 22px;
+    height: 16px;
+    background-image: url(../img/fa-icon.png);
+    background-size: 450%;
+    background-position: 0% 23%;
+    margin-right: 15px;
 }
 .filter-contain:hover {
 	cursor: pointer;
@@ -191,22 +202,8 @@
     padding-top:14px;
     padding-left: 15px;
 }
-.filter-contain:hover >.dropdown{
-    visibility: visible;
-    display: block;
-}
-
-.filter__icon{
-    align-self: baseline;
-    width: 22px;
-    height: 16px;
-    background-image: url(../img/fa-icon.png);
-    background-size: 450%;
-    background-position: 0% 23%;
-    margin-left: 100px;
-}
-.correct{
-    margin-left: 110px;
+.dropdown__item:hover{
+    background-color: #c2c2c2;
 }
 .filter-price{
     display: flex;
@@ -223,7 +220,6 @@
     border: 1px solid #c2c2c2;
     display: flex;
 }
-
 .price__start{
     width: 80px;
     display: flex;
@@ -368,4 +364,12 @@
     height: 25px;
     background-image: url(../img/fa-icon.png);
     background-position:-43px 49px;
+}
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+.visibility{
+    display: block;
+    visibility: visible;
 }
