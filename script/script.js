@@ -101,16 +101,6 @@ productPriceBacket = document.getElementsByClassName('product-price__backet');
 
 
 
-function hello(){
-    alert('hello');
-}
-
-
-
-
-product[0].onclick = function hello(){
-    console.log(this);
-};
 
 
 
@@ -132,15 +122,6 @@ product[0].onclick = function hello(){
 
 
 
-
-
-
-
-
-
-
-
-/*
 for(let i=0, j=product.length; i<=j; i++){
     product[i].addEventListener("click", function(e){
         if(document.querySelector('.product-active')){
@@ -154,7 +135,7 @@ for(let i=0, j=product.length; i<=j; i++){
     }, true);
 }
 
-*/
+
 
 
 
