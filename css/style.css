@@ -345,11 +345,21 @@
 }
 .product__text-active{
     display: none;
+
+}
+.product__text-hidden{
+    display: none;
     font-size: 14px;
     text-align: left;
     color:#969696;
     line-height: 140%;
     flex-grow: 1;
+}
+.product__text-hidden-active{
+    display: block;
+}
+.product-price__old-active{
+    display: block;
 }
 .product-price-active{
     display: flex;

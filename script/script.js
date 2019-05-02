@@ -85,33 +85,47 @@ filterDrop[1].addEventListener('click', ()=>{
     filterDrop[1].classList.remove('visibility');
 });
 
-let product = document.getElementsByClassName('product');
+let product = document.getElementsByClassName('product'),
+    productActive = document.querySelector('.product-active');
 
 for(let i=0, j=product.length; i<=j; i++){
         product[i].addEventListener("click", function(e){
             let mainContainProduct = e.currentTarget;
-            mainContainProduct.classList.toggle('product-active');
-            mainContainProduct.children[0].classList.toggle('product__img-active');
-            mainContainProduct.children[1].classList.toggle('product-info-active');
-            let mainContainProductInfo = mainContainProduct.children[1];
-            mainContainProductInfo.children[0].classList.toggle('product-content-active');
-            mainContainProductInfo.children[1].classList.toggle('product-price-active');
-            let productContent = mainContainProductInfo.children[0];
-            productContent.children[1].classList.toggle('hidden');
-            productContent.children[2].classList.toggle('visibility');
-            productContent.children[3].classList.toggle('visibility');
-            let productPrice = mainContainProductInfo.children[1];
-            productPrice.children[0].classList.toggle('product-price__new-active');
-            productPrice.children[1].classList.toggle('product-price__backet-active');
+                removeProductActive();
+            function addProductActive(mainContainProduct){
+                mainContainProduct.classList.toggle('product');
+                mainContainProduct.classList.toggle('product-active');
+                mainContainProduct.children[0].classList.toggle('product__img-active');
+                mainContainProduct.children[1].classList.toggle('product-info-active');
+                let mainContainProductInfo = mainContainProduct.children[1];
+                mainContainProductInfo.children[0].classList.toggle('product-content-active');
+                mainContainProductInfo.children[1].classList.toggle('product-price-active');
+                let productContent = mainContainProductInfo.children[0];
+                productContent.children[1].classList.toggle('product__text-active');
+                productContent.children[2].classList.toggle('product__text-hidden-active');
+                productContent.children[3].classList.toggle('product-price__old-active');
+                let productPrice = mainContainProductInfo.children[1];
+                productPrice.children[0].classList.toggle('product-price__new-active');
+                productPrice.children[1].classList.toggle('product-price__backet-active');
+}
+            function removeProductActive(){
+                if(document.querySelector('.product-active')!==null){
+                    document.querySelector('.product-active').classList.add('product');
+                    document.querySelector('.product-active').classList.remove('product-active');
+                    document.querySelector('.product__img-active').classList.remove('product__img-active');
+                    document.querySelector('.product-info-active').classList.remove('product-info-active');
+                    document.querySelector('.product-content-active').classList.remove('product-content-active');
+                    document.querySelector('.product-price-active').classList.remove('product-price-active');
+                    document.querySelector('.product__text-active').classList.remove('product__text-active');
+                    document.querySelector('.product__text-hidden-active').classList.remove('product__text-hidden-active');
+                    document.querySelector('.product-price__old-active').classList.remove('product-price__old-active');
+                    document.querySelector('.product-price__new-active').classList.remove('product-price__new-active');
+                    document.querySelector('.product-price__backet-active').classList.remove('product-price__backet-active');
+                    if(document.querySelector('.product-active')==null){
+                        addProductActive(mainContainProduct);
+                    }
+                }
+                else{addProductActive(mainContainProduct);}
+            }
     }, true);
 }
-
-
-/*('.product-active')
-('.product__img-active')
-('.product-info-active')
-('.product-content-active')
-('.product__text-active')
-('.product-price-active')
-('.product-price__new-active')
-('.product-price__backet-active')*/
