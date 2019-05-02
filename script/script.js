@@ -88,25 +88,27 @@ filterDrop[1].addEventListener('click', ()=>{
 let product = document.getElementsByClassName('product'),
     productActive = document.querySelector('.product-active');
 
-for(let i=0, j=product.length; i<=j; i++){
+for(let i=0, j=product.length; i<j; i++){
         product[i].addEventListener("click", function(e){
             let mainContainProduct = e.currentTarget;
                 removeProductActive();
             function addProductActive(mainContainProduct){
-                mainContainProduct.classList.toggle('product');
+                let mainContainProductInfo = mainContainProduct.children[1],
+                    productContent = mainContainProductInfo.children[0],
+                    productPrice = mainContainProductInfo.children[1];
                 mainContainProduct.classList.toggle('product-active');
-                mainContainProduct.children[0].classList.toggle('product__img-active');
-                mainContainProduct.children[1].classList.toggle('product-info-active');
-                let mainContainProductInfo = mainContainProduct.children[1];
-                mainContainProductInfo.children[0].classList.toggle('product-content-active');
-                mainContainProductInfo.children[1].classList.toggle('product-price-active');
-                let productContent = mainContainProductInfo.children[0];
-                productContent.children[1].classList.toggle('product__text-active');
-                productContent.children[2].classList.toggle('product__text-hidden-active');
-                productContent.children[3].classList.toggle('product-price__old-active');
-                let productPrice = mainContainProductInfo.children[1];
-                productPrice.children[0].classList.toggle('product-price__new-active');
-                productPrice.children[1].classList.toggle('product-price__backet-active');
+                for(let countProduct=0, lengthProduct=mainContainProduct.children.length; countProduct<lengthProduct;countProduct++){
+                    mainContainProduct.children[countProduct].classList.toggle(`${mainContainProduct.children[countProduct].classList}`+'-active')
+                };
+                for(let countInfo=0, lengthInfo=mainContainProductInfo.children.length; countInfo<lengthInfo;countInfo++){
+                    mainContainProductInfo.children[countInfo].classList.toggle(`${mainContainProductInfo.children[countInfo].classList}`+'-active')
+                };
+                for(let countContent=1, lengthContent=productContent.children.length; countContent<lengthContent;countContent++){
+                    productContent.children[countContent].classList.toggle(`${productContent.children[countContent].classList}`+'-active')
+                };
+                for(let countPrice=0, lengthPrice=productPrice.children.length; countPrice<lengthPrice;countPrice++){
+                    productPrice.children[countPrice].classList.toggle(`${productPrice.children[countPrice].classList}`+'-active')
+                };
 }
             function removeProductActive(){
                 if(document.querySelector('.product-active')!==null){
