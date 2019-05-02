@@ -85,91 +85,26 @@ filterDrop[1].addEventListener('click', ()=>{
     filterDrop[1].classList.remove('visibility');
 });
 
-
-
-let
-productContain = document.querySelector('.product-contain'),
-product = document.getElementsByClassName('product'),
-productImg = document.getElementsByClassName('product__img'),
-productInfo = document.getElementsByClassName('product-info'),
-productContent = document.getElementsByClassName('product-content'),
-productText = document.getElementsByClassName('product__text'),
-productPrice = document.getElementsByClassName('product-price'),
-productPriceNew = document.getElementsByClassName('product-price__new'),
-productPriceBacket = document.getElementsByClassName('product-price__backet');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let product = document.getElementsByClassName('product');
 
 for(let i=0, j=product.length; i<=j; i++){
-    product[i].addEventListener("click", function(e){
-        if(document.querySelector('.product-active')){
-            document.querySelector('.product-active').classList.remove('product-active');
-        }
-        let zz=e.target;
-        if(zz.classList.contains('product')){
-            zz.classList.add('product-active');
-        }
-        
+        product[i].addEventListener("click", function(e){
+            let mainContainProduct = e.currentTarget;
+            mainContainProduct.classList.toggle('product-active');
+            mainContainProduct.children[0].classList.toggle('product__img-active');
+            mainContainProduct.children[1].classList.toggle('product-info-active');
+            let mainContainProductInfo = mainContainProduct.children[1];
+            mainContainProductInfo.children[0].classList.toggle('product-content-active');
+            mainContainProductInfo.children[1].classList.toggle('product-price-active');
+            let productContent = mainContainProductInfo.children[0];
+            productContent.children[1].classList.toggle('hidden');
+            productContent.children[2].classList.toggle('visibility');
+            productContent.children[3].classList.toggle('visibility');
+            let productPrice = mainContainProductInfo.children[1];
+            productPrice.children[0].classList.toggle('product-price__new-active');
+            productPrice.children[1].classList.toggle('product-price__backet-active');
     }, true);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*productContain.addEventListener("click", function(e){
-    let xx = e.target;
-    xx.children[0].stopPropagation();
-    console.log(this.xx)
-
-  }, true
-);*/
-/*product.addEventListener('click', (e)=>{
-    let xx = e.target;
-    console.log(xx);
-    product[0].setAttribute('class', 'product-active');
-    productImg[0].setAttribute('class', 'product__img-active');
-    productInfo[0].setAttribute('class', 'product-info-active');
-    productContent[0].setAttribute('class', 'product-content-active');
-    productText[0].setAttribute('class', 'product__text-active');
-    productPrice[0].setAttribute('class', 'product-price-active');
-    productPriceNew[0].setAttribute('class', 'product-price__new-active');
-    productPriceBacket[0].setAttribute('class', 'product-price__backet-active');
-}, true)*/
 
 
 /*('.product-active')

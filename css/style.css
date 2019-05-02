@@ -304,8 +304,20 @@
     background-image: url(../img/fa-icon.png);
     background-position:-79px 49px;
 }
+.product__header{
+    font-size: 18px;
+    padding-bottom: 10px
+}
+.product-price__old{
+    display: none;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color:#969696;
+    text-decoration:line-through;
+}
 .product-active{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     width: 560px;
     height: 360px;
@@ -331,22 +343,13 @@
     height: 280px;
     border-bottom:1px solid red;
 }
-.product__header{
-    font-size: 18px;
-    padding-bottom: 10px
-}
 .product__text-active{
+    display: none;
     font-size: 14px;
     text-align: left;
     color:#969696;
     line-height: 140%;
     flex-grow: 1;
-}
-.product-price__old{
-    margin-bottom: 8px;
-    font-size: 18px;
-    color:#969696;
-    text-decoration:line-through;
 }
 .product-price-active{
     display: flex;
@@ -367,9 +370,7 @@
 }
 .hidden{
     display: none;
-    visibility: hidden;
 }
 .visibility{
     display: block;
-    visibility: visible;
 }
