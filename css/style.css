@@ -274,9 +274,6 @@
     margin:0 16px;
     flex-grow: 1;
 }
-.product__header{
-    
-}
 .product__text{
     font-size: 14px;
     text-align: left;
@@ -345,7 +342,6 @@
 }
 .product__text-active{
     display: none;
-
 }
 .product__text-hidden{
     display: none;
@@ -362,6 +358,8 @@
     display: block;
 }
 .product-price-active{
+    padding-left: 16px;
+    width: 254px;
     display: flex;
     justify-content: space-between
 }
@@ -380,7 +378,9 @@
 }
 .hidden{
     display: none;
+    visibility: hidden;
 }
 .visibility{
     display: block;
+    visibility: visible
 }

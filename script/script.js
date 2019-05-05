@@ -13,7 +13,21 @@ let menu = document.querySelector('.menu'),
     inputHidden = document.querySelector('.search-hidden'),
     filterContain = document.getElementsByClassName('filter-contain'),
     filterDrop = document.getElementsByClassName('dropdown'),
-    filterDropHeader = document.getElementsByClassName('filter__span');
+    filterDropHeader = document.getElementsByClassName('filter__span'),
+    priceStartValue =document.querySelector('.price__start'),
+    priceEndValue =document.querySelector('.price__end'),
+    arrClassNameActive = [
+        'product__img-active',
+        'product-info-active',
+        'product-content-active',
+        'product__header-active',
+        'product__text-active',
+        'product__text-hidden-active',
+        'product-price__old-active',
+        'product-price-active',
+        'product-price__new-active',
+        'product-price__backet-active'
+    ];
 
 if(window.matchMedia('(max-width: 1024px)').matches){
     menuBtn.addEventListener('click', ()=>{
@@ -75,7 +89,16 @@ filterContain[0].addEventListener('click', (e)=>{
 filterDrop[0].addEventListener('click', ()=>{
     filterDrop[0].classList.remove('visibility');
 });
-
+document.getElementById('body').addEventListener('click', ()=>{
+    if(filterDrop[0].hasAttribute('class', 'visibility')){
+        filterDrop[0].classList.remove('visibility');
+    }
+    if(filterDrop[1].hasAttribute('class', 'visibility')){
+        filterDrop[1].classList.remove('visibility');
+    }
+    inputMain.value="Поиск Товаров";
+    inputHidden.value="Поиск Товаров";
+},true);
 filterContain[1].addEventListener('click', (e)=>{
     filterDrop[1].classList.add('visibility');
     let dropItem = e.target;
@@ -84,10 +107,8 @@ filterContain[1].addEventListener('click', (e)=>{
 filterDrop[1].addEventListener('click', ()=>{
     filterDrop[1].classList.remove('visibility');
 });
-
 let product = document.getElementsByClassName('product'),
     productActive = document.querySelector('.product-active');
-
 for(let i=0, j=product.length; i<j; i++){
         product[i].addEventListener("click", function(e){
             let mainContainProduct = e.currentTarget;
@@ -98,36 +119,41 @@ for(let i=0, j=product.length; i<j; i++){
                     productPrice = mainContainProductInfo.children[1];
                 mainContainProduct.classList.toggle('product-active');
                 for(let countProduct=0, lengthProduct=mainContainProduct.children.length; countProduct<lengthProduct;countProduct++){
-                    mainContainProduct.children[countProduct].classList.toggle(`${mainContainProduct.children[countProduct].classList}`+'-active')
-                };
-                for(let countInfo=0, lengthInfo=mainContainProductInfo.children.length; countInfo<lengthInfo;countInfo++){
-                    mainContainProductInfo.children[countInfo].classList.toggle(`${mainContainProductInfo.children[countInfo].classList}`+'-active')
+                    mainContainProduct.children[countProduct].classList.toggle(`${mainContainProduct.children[countProduct].classList}`+'-active');
+                    productPrice.children[countProduct].classList.toggle(`${productPrice.children[countProduct].classList}`+'-active');
+                    mainContainProductInfo.children[countProduct].classList.toggle(`${mainContainProductInfo.children[countProduct].classList}`+'-active')
                 };
                 for(let countContent=1, lengthContent=productContent.children.length; countContent<lengthContent;countContent++){
-                    productContent.children[countContent].classList.toggle(`${productContent.children[countContent].classList}`+'-active')
-                };
-                for(let countPrice=0, lengthPrice=productPrice.children.length; countPrice<lengthPrice;countPrice++){
-                    productPrice.children[countPrice].classList.toggle(`${productPrice.children[countPrice].classList}`+'-active')
+                    productContent.children[countContent].classList.toggle(`${productContent.children[countContent].classList}`+'-active');
                 };
 }
             function removeProductActive(){
-                if(document.querySelector('.product-active')!==null){
-                    document.querySelector('.product-active').classList.add('product');
-                    document.querySelector('.product-active').classList.remove('product-active');
-                    document.querySelector('.product__img-active').classList.remove('product__img-active');
-                    document.querySelector('.product-info-active').classList.remove('product-info-active');
-                    document.querySelector('.product-content-active').classList.remove('product-content-active');
-                    document.querySelector('.product-price-active').classList.remove('product-price-active');
-                    document.querySelector('.product__text-active').classList.remove('product__text-active');
-                    document.querySelector('.product__text-hidden-active').classList.remove('product__text-hidden-active');
-                    document.querySelector('.product-price__old-active').classList.remove('product-price__old-active');
-                    document.querySelector('.product-price__new-active').classList.remove('product-price__new-active');
-                    document.querySelector('.product-price__backet-active').classList.remove('product-price__backet-active');
+                if(document.querySelector('.product-active')){
+                    let productActive = document.querySelector('.product-active');
+                    let productElements = productActive.getElementsByTagName("*");
+                    for(let productCount = 0, arrClassNameActivelength = arrClassNameActive.length; productCount<arrClassNameActivelength; productCount++){
+                        productElements[productCount].classList.remove(arrClassNameActive[productCount]);
+                    }
+                    productActive.classList.remove('product-active');
                     if(document.querySelector('.product-active')==null){
                         addProductActive(mainContainProduct);
                     }
-                }
-                else{addProductActive(mainContainProduct);}
+                } 
             }
     }, true);
 }
+
+priceEndValue.addEventListener('keypress', function(event){
+    var keys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+    var validIndex = keys.indexOf(event.charCode);
+    if(validIndex == -1){
+        event.preventDefault();
+    }
+});
+priceStartValue.addEventListener('keypress', function(event){
+    var keys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57];
+    var validIndex = keys.indexOf(event.charCode);
+    if(validIndex == -1){
+        event.preventDefault();
+    }
+});

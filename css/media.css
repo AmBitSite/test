@@ -1,5 +1,6 @@
 @media  (max-width: 1150px) {
     .wrapper{
+        width: auto;
         margin-bottom: 70px;
     }
     .content{
@@ -90,7 +91,7 @@
         justify-content: space-between;
         align-items: center;
         height: 50px;
-        width:100%;
+        width:99%;
         border-bottom: 1px solid #dedede;
     }
     .menu-hidden__header{
@@ -115,6 +116,7 @@
         margin-bottom: -.5%;
     }
     .product-contain{
+        width: 100%;
         margin: 0 auto;
         justify-content: center;
     }
@@ -149,7 +151,10 @@
         padding-left: 10px;
     }
     .product-content-active{
-        width: 100%;
+        width: 95%;
+    }
+    product-price-active{
+        width: 95%;
     }
     .menu{
         position: fixed;
@@ -291,9 +296,22 @@
         width: 98%;
         border:1px solid #dedede;
     }
+    .search{
+        width: auto;
+        margin-right: 40px;
+        flex-grow: 1
+    }
+    .search__input{
+        background-color: #265c99;
+        border:none;
+        color: #fff;
+        font-size: 14px;
+        width: 100%;
+}
 }
 @media (max-width: 500px) and (min-width: 320px){
     .wrapper{
+        width: 99%;
         margin: 70px 0;
     }
     .content{
